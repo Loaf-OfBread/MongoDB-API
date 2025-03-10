@@ -14,6 +14,7 @@ services:
       - mongodb_data:/data/db
 
   mongodb-local-data-api:
+    build: .
     container_name: mongodb-local-data-api
     restart: always
     depends_on:
