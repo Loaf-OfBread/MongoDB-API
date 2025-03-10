@@ -10,15 +10,11 @@ services:
     environment:
       MONGO_USERNAME: "${MONGO_USERNAME}"
       MONGO_PASSWORD: "${MONGO_PASSWORD}"
-      MONGO_PORT: "${MONGO_PORT}"
       MONGO_HOST: "${MONGO_HOST}"
+      MONGO_PORT: "${MONGO_PORT}"
       API_PORT: "${API_PORT}"
       API_KEY: "${API_KEY}"
+    depends_on:
+      - mongodb
     command: >
-      mongodb-local-data-api
-      --username=${MONGO_USERNAME}
-      --password=${MONGO_PASSWORD}
-      --mongodbHost=${MONGO_HOST}  # Use the external MongoDB host
-      --mongodbPort=${MONGO_PORT}
-      --apiPort=${API_PORT}
-      --key=${API_KEY}
+      node /src/index.js 
