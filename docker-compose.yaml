@@ -14,7 +14,7 @@ services:
       - mongodb_data:/data/db
 
   mongodb-local-data-api:
-    image: Loaf-OfBread/MongoDB-API:latest
+    image: loaf-ofbread/mongobd-api:latest
     container_name: mongodb-local-data-api
     restart: always
     depends_on:
