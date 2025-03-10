@@ -17,4 +17,4 @@ services:
     depends_on:
       - mongodb
     command: >
-      node /src/index.js 
+      node app/src/index.js 
